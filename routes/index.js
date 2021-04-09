@@ -4,6 +4,7 @@ const Student = require("../modals/studentSchema.js");
 const bcrypt = require("bcryptjs");
 const randomstring = require("randomstring");
 const passport = require("passport");
+const mailer = require("../misc/mailer");
 
 router.post("/student/register", async (req, res) => {
 	try {
@@ -22,7 +23,21 @@ router.post("/student/register", async (req, res) => {
 			branch
 		});
 		await student.save();
-		req.flash("success", "you may now log in");
+
+		const html = `Hi there
+		<br/> This is your token to verify the email address
+		<br/>
+		Token: <b>${token}</b>
+		<br/>
+		On the following page:
+		<a href="http://localhost:3000/student/verify">http://localhost:3000/student/verify</a>
+		<br/> <br/>
+		`;
+
+		await mailer.sendEmail("admin@mnnit.ac.in", email, "Please verify your email", html);
+
+
+		req.flash("success", "please check your email");
 		res.redirect("/");
 	} catch (err) {
 		console.log(err);
@@ -40,6 +55,24 @@ router.get("/student/logout", (req, res) => {
 	req.logOut();
 	req.flash("success", "successsfully logout");
 	res.render("/");
+});
+
+router.post("/student/verify", async (req, res) => {
+	try{const { token } = req.body;
+	const student = await Student.findOne({ "token": token });
+	if (!student) {
+		req.flash("error", "wrong token");
+		res.redirect("/");
+	}
+	student.isVerified = true;
+	student.token = "";
+	await student.save();
+	req.flash("success", "successsfully verified");
+		res.redirect("/");
+	}
+	catch (err) {
+		console.log(err);
+	}
 })
 
 module.exports = router;
