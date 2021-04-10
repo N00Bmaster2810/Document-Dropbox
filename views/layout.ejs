@@ -1,147 +1,151 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
 
     <!-- Datepicker CSS -->
-<link rel="stylesheet" href="css/datepicker.css">
+    <link rel="stylesheet" href="css/datepicker.css" />
 
-<!-- Datepicker JS-->
-<script src="js/datepicker.js"></script>
+    <!-- Datepicker JS-->
+    <script src="js/datepicker.js"></script>
 
-<style>
-.datepicker{z-index:1151 !important;}
-</style>
+    <style>
+      .datepicker {
+        z-index: 1151 !important;
+      }
+    </style>
 
     <title>Project</title>
   </head>
   <body>
-    
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#"><h1>pRoJeCt</h1></a>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"><h1>pRoJeCt</h1></a>
+        </div>
+      </div>
+    </nav>
+
+    <!--body-->
+
+    <div class="container-fluid">
+      <img src="moti.jpeg" alt="Cinque Terre" />
     </div>
-  </div>
-</nav>
 
-<!--body-->
-
-<div class="container-fluid">
-    <img src="moti.jpeg" alt="Cinque Terre">
-</div>
-
-<div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-2">        
-      </div>
-       <div class="col-md-4"> 
-        <button type="button" class="btn-lg mt-2" data-toggle="modal" data-target="#LoginModal">
-          Login
-        </button>       
-      </div>
-       <div class="col-md-4">
-       <button type="button" class="btn-lg mt-2" data-toggle="modal" data-target="#RegisterModal">
-          Register
-        </button>        
-      </div>
-       <div class="col-md-2">        
-      </div>
-      
-    </div>
-  </div>
-</div>
-
-
-<!-- Login Modal -->
-<div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title mx-auto" id="LoginModalTitle">Login</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="email" class="col-form-label">Email Id</label>
-            <input type="text" class="form-control" id="email">
+    <div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-4">
+            <button type="button" class="btn-lg mt-2" data-toggle="modal" data-target="#LoginModal">Login</button>
           </div>
-          <div class="form-group">
-            <label for="Password" class="col-form-label">Password</label>
-            <input class="form-control input-lg" type="Password" id="Password"></input>
+          <div class="col-md-4">
+            <button type="button" class="btn-lg mt-2" data-toggle="modal" data-target="#RegisterModal">Register</button>
           </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Submit</button>
+          <div class="col-md-2"></div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-
-
-<!-- Register Modal -->
-<div class="modal fade" id="RegisterModal" tabindex="-1" role="dialog" aria-labelledby="RegisterModalTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="RegisterModalTitle">Register</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="Name" class="col-form-label">Name</label>
-            <input type="text" class="form-control" id="Name">
+    <!-- Login Modal -->
+    <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title mx-auto" id="LoginModalTitle">Login</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-          <div class="form-group">
-            <label for="email" class="col-form-label">Email Id</label>
-            <input type="Email" class="form-control" id="email">
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="email" class="col-form-label">Email Id</label>
+                <input type="text" class="form-control" id="email" />
+              </div>
+              <div class="form-group">
+                <label for="Password" class="col-form-label">Password</label>
+                <input class="form-control input-lg" type="Password" id="Password" />
+              </div>
+            </form>
           </div>
-          <div class="form-group">
-            <label for="Passwordreg" class="col-form-label">Password</label>
-            <input class="form-control input-lg" type="Password" id="Passwordreg"></input>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Submit</button>
           </div>
-
-          <!-- DOB SECTON IN MODAL-->
-          <div class="form-group">
-            <label for="date-of-birth" class="col-form-label">Date of Birth</label>
-            <input class="form-control" type="datepicker" id="date-of-birth" placeholder="dd/mm/yy"></input>
-          </div>
-
-
-          <div class="form-group">
-            <label for="Branch" class="col-form-label">Branch</label>
-            <input type="text" class="form-control" id="Branch">
-          </div>
-
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Submit</button>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
+    <!-- Register Modal -->
+    <div class="modal fade" id="RegisterModal" tabindex="-1" role="dialog" aria-labelledby="RegisterModalTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="RegisterModalTitle">Register</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="Name" class="col-form-label">Name</label>
+                <input type="text" class="form-control" id="Name" />
+              </div>
+              <div class="form-group">
+                <label for="email" class="col-form-label">Email Id</label>
+                <input type="Email" class="form-control" id="email" />
+              </div>
+              <div class="form-group">
+                <label for="Passwordreg" class="col-form-label">Password</label>
+                <input class="form-control input-lg" type="Password" id="Passwordreg" />
+              </div>
 
+              <!-- DOB SECTON IN MODAL-->
+              <div class="form-group">
+                <label for="date-of-birth" class="col-form-label">Date of Birth</label>
+                <input class="form-control" type="datepicker" id="date-of-birth" placeholder="dd/mm/yy" />
+              </div>
+
+              <div class="form-group">
+                <label for="Branch" class="col-form-label">Branch</label>
+                <input type="text" class="form-control" id="Branch" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
