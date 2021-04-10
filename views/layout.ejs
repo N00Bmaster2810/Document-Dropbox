@@ -28,21 +28,20 @@
     <title>Project</title>
   </head>
   <body>
-
     <nav class="navbar navbar-default">
       <div class="container-fluid">
-      <div class="jumbotron" style="background-color: #f8ede3">
-        <div class="navbar-brand" >
-          <h1>Motilal Nehru National Institute of Technology</h1>
+        <div class="jumbotron" style="background-color: #f8ede3">
+          <h1>
+            Motilal Nehru National Institute of Technology
+            <img src="/images/th.jpg" alt="logo" />
+          </h1>
         </div>
-      </div>
       </div>
     </nav>
 
-     <% if(error){ %>
+    <% if(error){ %>
     <div class="bg-danger pl-5 bg-outline-danger"><%= error %></div>
-    <% } %>
-    <% if(success){ %>
+    <% } %> <% if(success){ %>
     <div class="bg-success pl-5 bg-outline-success"><%= success %></div>
     <% } %>
 
@@ -54,19 +53,16 @@
             <h2 align="center">Document Dropbox</h2>
             <p>Hassle free way to submit your documents to Institute</p>
           </div>
-          
         </div>
-        <div class="row mt-4" >
-          <div class="col-md-2">
-          </div>
+        <div class="row mt-4">
+          <div class="col-md-2"></div>
           <div class="col-md-4">
-            <img src="th.jpg" alt="logo">
+            <img src="/images/th.jpg" alt="logo" />
           </div>
-          <div class="col-md-2">
-          </div>
+          <div class="col-md-2"></div>
           <div class="col-md-3">
             <button type="button" class="btn-lg mt-4 mx-4" data-toggle="modal" data-target="#LoginModal" style="background-color: #f6dfeb">Login</button>
-         
+
             <button type="button" class="btn-lg mt-4 mx-4" data-toggle="modal" data-target="#RegisterModal" style="background-color: #f6dfeb">Register</button>
           </div>
           <div class="col-md-2"></div>
@@ -153,50 +149,47 @@
     </div>
 
     <!-- Footer -->
-<footer class="page-footer font-small special-color-dark pt-4" style="background-color: #f8ede3">
+    <footer class="page-footer font-small special-color-dark pt-4" style="background-color: #f8ede3">
+      <!-- Footer Elements -->
+      <div class="container">
+        <!-- Social buttons -->
+        <ul class="list-unstyled list-inline text-center">
+          <li class="list-inline-item">
+            <a class="btn-floating btn-fb mx-1">
+              <i class="fab fa-facebook-f"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-tw mx-1">
+              <i class="fab fa-twitter"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-gplus mx-1">
+              <i class="fab fa-google-plus-g"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-li mx-1">
+              <i class="fab fa-linkedin-in"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-github"></i>
+          </li>
+        </ul>
+        <!-- Social buttons -->
+      </div>
+      <!-- Footer Elements -->
 
-  <!-- Footer Elements -->
-  <div class="container">
-
-    <!-- Social buttons -->
-    <ul class="list-unstyled list-inline text-center">
-      <li class="list-inline-item">
-        <a class="btn-floating btn-fb mx-1">
-          <i class="fab fa-facebook-f"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-tw mx-1">
-          <i class="fab fa-twitter"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-gplus mx-1">
-          <i class="fab fa-google-plus-g"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-li mx-1">
-          <i class="fab fa-linkedin-in"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-          <i class="fab fa-github"></i>
-      </li>
-    </ul>
-    <!-- Social buttons -->
-
-  </div>
-  <!-- Footer Elements -->
-
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2021 Copyright:
-    <a href="https://github.com/N00Bmaster2810/Hack-36">Dev-vrat</a>
-  </div>
-  <!-- Copyright -->
-
-</footer>
-<!-- Footer -->
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">
+        © 2021 Copyright:
+        <a href="https://github.com/N00Bmaster2810/Hack-36">Dev-vrat</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
