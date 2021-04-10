@@ -28,15 +28,18 @@
     <title>Project</title>
   </head>
   <body>
+
     <nav class="navbar navbar-default">
       <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#"><h1>pRoJeCt</h1></a>
+      <div class="jumbotron" style="background-color: #f8ede3">
+        <div class="navbar-brand" >
+          <h1>Motilal Nehru National Institute of Technology</h1>
         </div>
+      </div>
       </div>
     </nav>
 
-    <% if(error){ %>
+     <% if(error){ %>
     <div class="bg-danger pl-5 bg-outline-danger"><%= error %></div>
     <% } %>
     <% if(success){ %>
@@ -44,20 +47,27 @@
     <% } %>
 
     <!--body-->
-
-    <div class="container-fluid">
-      <img src="/images/moti.jpeg" alt="Cinque Terre" />
-    </div>
-
     <div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-2"></div>
+      <div class="container-fluid my-4 mx-4" style="background-color: #f2edd7">
+        <div class="row" style="border: 1px solid">
           <div class="col-md-4">
-            <button type="button" class="btn-lg mt-2" data-toggle="modal" data-target="#LoginModal">Login</button>
+            <h2 align="center">Document Dropbox</h2>
+            <p>Hassle free way to submit your documents to Institute</p>
+          </div>
+          
+        </div>
+        <div class="row mt-4" >
+          <div class="col-md-2">
           </div>
           <div class="col-md-4">
-            <button type="button" class="btn-lg mt-2" data-toggle="modal" data-target="#RegisterModal">Register</button>
+            <img src="th.jpg" alt="logo">
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-3">
+            <button type="button" class="btn-lg mt-4 mx-4" data-toggle="modal" data-target="#LoginModal" style="background-color: #f6dfeb">Login</button>
+         
+            <button type="button" class="btn-lg mt-4 mx-4" data-toggle="modal" data-target="#RegisterModal" style="background-color: #f6dfeb">Register</button>
           </div>
           <div class="col-md-2"></div>
         </div>
@@ -143,7 +153,7 @@
     </div>
 
     <!-- Footer -->
-<footer class="page-footer font-small special-color-dark bg-light pt-4">
+<footer class="page-footer font-small special-color-dark pt-4" style="background-color: #f8ede3">
 
   <!-- Footer Elements -->
   <div class="container">
