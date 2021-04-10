@@ -22,7 +22,7 @@ Team Name: Dev_vrat
 
 * [Satya Prakash Satyam](https://github.com/N00Bmaster2810)
 * [Hardik Jain](https://github.com/hardikj1008)
-* [Ayushman Singh]
+* [Ayushman Singh](https://github.com/mrayushman)
 
 
 ### Made at:
