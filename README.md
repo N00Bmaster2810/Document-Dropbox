@@ -18,7 +18,7 @@
 
 ## Contributors:
 
-Team Name: OP Squad
+Team Name: Dev_vrat
 
 * [Satya Prakash Satyam](https://github.com/N00Bmaster2810)
 * [Hardik Jain](https://github.com/hardikj1008)
