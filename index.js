@@ -8,29 +8,31 @@ const app = express();
 const passport = require("passport");
 const session = require("express-session"); //package for session
 const flash = require("connect-flash"); //package for displaying messages on the front end
-const router = require("./routes/index")
+const router = require("./routes/index");
+const MongoStore = require("connect-mongo"); 
 
 
 
 
 
 const PORT = process.env.PORT || 3000;
-mongoose.connect(process.env.CONNECTION_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true
-});
+const uri = process.env.CONNECTION_URL;
+mongoose.connect(uri, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
 
-
+//sesion store
+let options = {
+  mongoUrl: uri,
+  collection: "sessions",
+};
 
 //session config
 app.use(
   session({
     secret: process.env.COOKIE_SECRET,
     resave: false,
+    store: MongoStore.create(options),
     saveUninitialized: false,
-    cookie: { maxAge: 1000 * 60 * 60 * 24 },
+    cookie: { maxAge: 100000 * 60 * 60 * 24 },
     unset: "destroy",
   })
 );
@@ -66,10 +68,6 @@ app.use(
     extended: true,
   })
 );
-app.get("/", (req, res) => {
-  console.log(req.user);
-  res.render("layout");
-});
 
 //app.post("/student/register", (req, res) => {
 //  console.log(req.body);

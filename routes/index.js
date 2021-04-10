@@ -6,7 +6,14 @@ const randomstring = require("randomstring");
 const passport = require("passport");
 const mailer = require("../misc/mailer");
 const dashboard = require("../middleware/dashboard");
+const home = require("../middleware/home");
+const multer = require("multer");
 
+
+
+router.get("/", home, (req, res) => {
+  res.render("layout");
+})
 router.post("/student/register", async (req, res) => {
   try {
     console.log(req.body);
@@ -110,8 +117,33 @@ router.get("/student/verify", (req, res) => {
   res.render("verify");
 });
 
-router.get("/student/dashboard",dashboard, (req, res) => {
-  res.render("dashboard");
+router.get("/student/dashboard", dashboard, (req, res) => {
+  const student = req.user;
+  res.render("dashboard", {student: student, moment: moment});
 });
+
+router.get("/student/submit", (req, res) => {
+  res.render("form");
+});
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "public/uploads");
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname + req.user.reg);
+  },
+});
+
+const upload = multer({ storage: storage });
+
+var cpUpload = upload.fields([
+  { name: "compPic", maxCount: 1 },
+  { name: "compCover", maxCount: 1 },
+]);
+
+router.post("/student/submit", (req, res) => {
+
+})
 
 module.exports = router;
