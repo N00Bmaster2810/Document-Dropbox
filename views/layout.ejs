@@ -68,19 +68,19 @@
             </button>
           </div>
           <div class="modal-body">
-            <form>
+            <form method="POST" action="/student/login">
               <div class="form-group">
-                <label for="email" class="col-form-label">Email Id</label>
-                <input type="text" class="form-control" id="email" />
+                <label for="email-login" class="col-form-label">Email Id</label>
+                <input type="email" class="form-control" id="email-login" name="email" />
               </div>
               <div class="form-group">
-                <label for="Password" class="col-form-label">Password</label>
-                <input class="form-control input-lg" type="Password" id="Password" />
+                <label for="password-login" class="col-form-label">Password</label>
+                <input class="form-control input-lg" type="password" id="password-login" name="password" />
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
               </div>
             </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Submit</button>
           </div>
         </div>
       </div>
@@ -97,34 +97,39 @@
             </button>
           </div>
           <div class="modal-body">
-            <form>
+            <form method="POST" action="/student/register">
               <div class="form-group">
-                <label for="Name" class="col-form-label">Name</label>
-                <input type="text" class="form-control" id="Name" />
+                <label for="name" class="col-form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" />
               </div>
               <div class="form-group">
                 <label for="email" class="col-form-label">Email Id</label>
-                <input type="Email" class="form-control" id="email" />
+                <input type="email" class="form-control" id="email" name="email" />
               </div>
               <div class="form-group">
-                <label for="Passwordreg" class="col-form-label">Password</label>
-                <input class="form-control input-lg" type="Password" id="Passwordreg" />
+                <label for="password" class="col-form-label">Password</label>
+                <input class="form-control input-lg" type="password" id="password" name="password" />
               </div>
 
               <!-- DOB SECTON IN MODAL-->
               <div class="form-group">
-                <label for="date-of-birth" class="col-form-label">Date of Birth</label>
-                <input class="form-control" type="datepicker" id="date-of-birth" placeholder="dd/mm/yy" />
+                <label for="dob" class="col-form-label">Date of Birth</label>
+                <input class="form-control" type="date" id="dob" placeholder="dd/mm/yy" name="dob" />
               </div>
 
               <div class="form-group">
-                <label for="Branch" class="col-form-label">Branch</label>
-                <input type="text" class="form-control" id="Branch" />
+                <label for="reg" class="col-form-label">Registration Number</label>
+                <input type="number" class="form-control" id="reg" name="reg" />
+              </div>
+
+              <div class="form-group">
+                <label for="branch" class="col-form-label">Branch</label>
+                <input type="text" class="form-control" id="branch" name="branch" />
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
               </div>
             </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Submit</button>
           </div>
         </div>
       </div>
