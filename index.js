@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 require("dotenv").config();
 const bodyParser = require("body-parser")
 const expressLayouts = require("express-ejs-layouts");
@@ -7,16 +8,12 @@ const app = express();
 const passport = require("passport");
 const session = require("express-session"); //package for session
 const flash = require("connect-flash"); //package for displaying messages on the front end
-
-
-app.use(expressLayouts);
-app.set("view engine", "ejs");
+const router = require("./routes/index")
 
 
 
-app.get('/', (req, res) => {
-	res.send("Welcome to hack 36");
-})
+
+
 const PORT = process.env.PORT || 3000;
 mongoose.connect(process.env.CONNECTION_URL, {
   useNewUrlParser: true,
@@ -58,15 +55,23 @@ app.use((req, res, next) => {
   next();
 });
 
-
-app.use(express.static("public"));
-app.use(express.json());
-
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+app.use(bodyParser.json());
 app.use(
   bodyParser.urlencoded({
     extended: true,
   })
 );
+app.get("/", (req, res) => {
+  console.log(req.user);
+  res.render("layout");
+});
 
+//app.post("/student/register", (req, res) => {
+//  console.log(req.body);
+//})
+
+app.use("/", router);
 
 app.listen(PORT, console.log("server started"));
