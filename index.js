@@ -39,6 +39,7 @@ app.use(flash());
 
 //passport config for sessions and storing login data
 const passportInit = require("./config/passport");
+passportInit(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -57,6 +58,8 @@ app.use((req, res, next) => {
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+
+app.use(express.static("static"));
 app.use(bodyParser.json());
 app.use(
   bodyParser.urlencoded({
