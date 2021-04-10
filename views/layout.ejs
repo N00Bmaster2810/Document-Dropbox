@@ -36,10 +36,17 @@
       </div>
     </nav>
 
+    <% if(error){ %>
+    <div class="bg-danger pl-5 bg-outline-danger"><%= error %></div>
+    <% } %>
+    <% if(success){ %>
+    <div class="bg-success pl-5 bg-outline-success"><%= success %></div>
+    <% } %>
+
     <!--body-->
 
     <div class="container-fluid">
-      <img src="moti.jpeg" alt="Cinque Terre" />
+      <img src="/images/moti.jpeg" alt="Cinque Terre" />
     </div>
 
     <div>

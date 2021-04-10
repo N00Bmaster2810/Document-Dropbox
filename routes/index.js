@@ -5,17 +5,18 @@ const bcrypt = require("bcryptjs");
 const randomstring = require("randomstring");
 const passport = require("passport");
 const mailer = require("../misc/mailer");
+const dashboard = require("../middleware/dashboard");
 
 router.post("/student/register", async (req, res) => {
   try {
     console.log(req.body);
-	  const { name, email, password, dob, reg, branch } = req.body;
-	  
-	  const user = Student.findOne({ "email": email });
-	  if (user) {
-		  req.flash("error", "Email already exists");
-		  res.render("/");
-	  }
+    const { name, email, password, dob, reg, branch } = req.body;
+
+    const stu = await Student.findOne({ email: email });
+    if (stu) {
+      req.flash("error", "Email already exists");
+      return res.redirect("/");
+    }
 
     const hashPassword = await bcrypt.hash(password, 10);
 
@@ -44,7 +45,7 @@ router.post("/student/register", async (req, res) => {
 
     await mailer.sendEmail("hack.mnnit.36@gmail.com", email, "Please verify your email", html);
 
-    req.flash("success", "please check your email");
+    req.flash("success", "An email has been sent to your registered email-id. Please refer to it to verify your account.");
     res.redirect("/");
   } catch (err) {
     console.log(err);
@@ -66,7 +67,13 @@ router.post("/student/login", (req, res, next) => {
         console.log(info.message);
         return res.redirect("/");
       }
-      res.send("dashboard");
+      req.logIn(user, (err) => {
+        if (err) {
+          req.flash("error", info.message);
+          return next(err);
+        }
+        res.redirect("/student/dashboard");
+      });
     } catch (err) {
       console.log(err);
       return res.redirect("/");
@@ -75,9 +82,10 @@ router.post("/student/login", (req, res, next) => {
 });
 
 router.get("/student/logout", (req, res) => {
+  console.log(req.user);
   req.logOut();
   req.flash("success", "successsfully logout");
-  res.render("/");
+  res.redirect("/");
 });
 
 router.post("/student/verify", async (req, res) => {
@@ -86,7 +94,7 @@ router.post("/student/verify", async (req, res) => {
     const student = await Student.findOne({ token: token });
     if (!student) {
       req.flash("error", "wrong token");
-      res.redirect("/");
+      res.redirect("/student/verify");
     }
     student.isVerified = true;
     student.token = "";
@@ -100,6 +108,10 @@ router.post("/student/verify", async (req, res) => {
 
 router.get("/student/verify", (req, res) => {
   res.render("verify");
+});
+
+router.get("/student/dashboard",dashboard, (req, res) => {
+  res.render("dashboard");
 });
 
 module.exports = router;
