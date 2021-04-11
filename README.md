@@ -10,7 +10,7 @@
   
 ##Demo video
 
- * [Demo for the project made till now](https://github.com/N00Bmaster2810/Hack-36)
+ * [Demo for the project made till now](https://drive.google.com/file/d/1NL-MnF1CWNaLicMv2WVWkDynbNjfAGSX/view?usp=sharing)
 
 ## Technology Stack:
   1) Node.JS
