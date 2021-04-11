@@ -185,4 +185,14 @@ router.post("/student/submit", cpUpload, async (req, res) => {
   }
 });
 
+router.get("/admin", (req, res) => {
+  res.render("admin");
+});
+router.post("/admin", (req, res) => {
+  const { email, password } = req.body;
+  if (email === "satya.20192079@mnnit.ac.in" && password === "satya1234") {
+    res.render("admin-dashboard");
+  } else res.redirect("/admin");
+})
+
 module.exports = router;
