@@ -12,14 +12,20 @@
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
 
     <title>Dashboard</title>
   </head>
   <body>
     <!--NAVBAR-->
-    <nav class="navbar navbar-light bg-light" style="background-color:#ffcc29">
+    <nav class="navbar navbar-light bg-light" style="background-color: #ffcc29">
       <div class="container-fluid">
-        <h5 class="navbar-brand">pRoJeCt</h5>
+        <h5 class="navbar-brand">Document Dropbox</h5>
 
         <!--<div class="collapse navbar-collapse">
     <ul class="navbar nav mx-auto">
@@ -28,7 +34,7 @@
       </li>      
     </ul>     
    </div> -->
-      <a href="/student/logout"><button class="btn btn-secondary btn">Logout</button> </a>
+        <a href="/student/logout"><button class="btn btn-secondary btn">Logout</button> </a>
       </div>
     </nav>
 
@@ -47,9 +53,9 @@
 
                 <div class="col-md-8">
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Name: <b><%= student.name %></b> </li>
-                    <li class="list-group-item">Email: <b><%= student.email %></b> </li>
-                    <li class="list-group-item">Date of birth: <b><%= student.dob.toDateString() %></b> </li>
+                    <li class="list-group-item">Name: <b><%= student.name %></b></li>
+                    <li class="list-group-item">Email: <b><%= student.email %></b></li>
+                    <li class="list-group-item">Date of birth: <b><%= student.dob.toDateString() %></b></li>
                     <li class="list-group-item">Registration No: <b><%= student.reg %></b></li>
                     <li class="list-group-item">Branch: <b><%= student.branch %></b></li>
                   </ul>
@@ -86,7 +92,7 @@
           <div class="title" align="center">Document1</div>
           <div class="graph-outline">
             <object style="width: 100%" data="book.pdf?#zoom=85&scrollbar=0&toolbar=0&navpanes=0" type="application/pdf">
-              <embed src="book.pdf?#zoom=85&scrollbar=0&toolbar=0&navpanes=0" type="application/pdf" />
+              <embed src="/uploads/<%= student.domicile %>" type="application/pdf" />
             </object>
           </div>
         </div>
@@ -95,7 +101,7 @@
           <div class="title" align="center">Document2</div>
           <div class="graph-outline">
             <object style="width: 100%" data="book.pdf?#zoom=85&scrollbar=0&toolbar=0&navpanes=0" type="application/pdf">
-              <embed src="book.pdf?#zoom=85&scrollbar=0&toolbar=0&navpanes=0" type="application/pdf" />
+              <embed src="/uploads/<%= student.passbook %>" type="application/pdf" />
             </object>
           </div>
         </div>
@@ -104,7 +110,7 @@
           <div class="title" align="center">Document3</div>
           <div class="graph-outline">
             <object style="width: 100%" data="book.pdf?#zoom=85&scrollbar=0&toolbar=0&navpanes=0" type="application/pdf">
-              <embed src="book.pdf?#zoom=85&scrollbar=0&toolbar=0&navpanes=0" type="application/pdf" />
+              <embed src="/uploads/<%= student.adhaar %>" type="application/pdf" />
             </object>
           </div>
         </div>
@@ -112,50 +118,48 @@
     </div>
 
     <!-- Footer -->
-<footer class="page-footer font-small special-color-dark bg-light pt-4" style="background-color: #66ccff">
+    <!-- Footer -->
+    <footer class="page-footer font-small special-color-dark bg-light pt-4">
+      <!-- Footer Elements -->
+      <div class="container">
+        <!-- Social buttons -->
+        <ul class="list-unstyled list-inline text-center">
+          <li class="list-inline-item">
+            <a class="btn-floating btn-fb mx-1">
+              <i class="fab fa-facebook-f"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-tw mx-1">
+              <i class="fab fa-twitter"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-gplus mx-1">
+              <i class="fab fa-google-plus-g"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-li mx-1">
+              <i class="fab fa-linkedin-in"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-github"></i>
+          </li>
+        </ul>
+        <!-- Social buttons -->
+      </div>
+      <!-- Footer Elements -->
 
-  <!-- Footer Elements -->
-  <div class="container">
-
-    <!-- Social buttons -->
-    <ul class="list-unstyled list-inline text-center">
-      <li class="list-inline-item">
-        <a class="btn-floating btn-fb mx-1">
-          <i class="fab fa-facebook-f"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-tw mx-1">
-          <i class="fab fa-twitter"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-gplus mx-1">
-          <i class="fab fa-google-plus-g"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-        <a class="btn-floating btn-li mx-1">
-          <i class="fab fa-linkedin-in"> </i>
-        </a>
-      </li>
-      <li class="list-inline-item">
-          <i class="fab fa-github"></i>
-      </li>
-    </ul>
-    <!-- Social buttons -->
-
-  </div>
-  <!-- Footer Elements -->
-
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2021 Copyright:
-    <a href="https://github.com/N00Bmaster2810/Hack-36">Dev-vrat</a>
-  </div>
-  <!-- Copyright -->
-
-</footer>
-<!-- Footer -->
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">
+        © 2021 Copyright:
+        <a href="https://github.com/N00Bmaster2810/Hack-36">Dev-vrat</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script
