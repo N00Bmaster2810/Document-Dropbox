@@ -1,4 +1,4 @@
-<h1 align="center">Hack36</h1>
+<h1 align="center">Document dropbox</h1>
 <p align="center">
 </p>
 
@@ -6,9 +6,8 @@
 
 
 ## Introduction:
-  Intro of the project
+  Hassle free way to submit your documents to Institute. Often you need to submit documents to the college for various purposes and way of submitting these document was gooogle form which was inefficient;. So "Document Dropbox" is a simple idea to tackle this problem.
   
-## Table of Contents:
 
 ## Technology Stack:
   1) Node.JS
