@@ -2,7 +2,6 @@ const express = require("express");
 const path = require("path");
 require("dotenv").config();
 const bodyParser = require("body-parser")
-const expressLayouts = require("express-ejs-layouts");
 const mongoose = require("mongoose");
 const app = express();
 const passport = require("passport");
@@ -10,10 +9,6 @@ const session = require("express-session"); //package for session
 const flash = require("connect-flash"); //package for displaying messages on the front end
 const router = require("./routes/index");
 const MongoStore = require("connect-mongo"); 
-
-
-
-
 
 const PORT = process.env.PORT || 3000;
 const uri = process.env.CONNECTION_URL;
@@ -41,6 +36,7 @@ app.use(flash());
 
 //passport config for sessions and storing login data
 const passportInit = require("./config/passport");
+const studentRouter = require("./routes/studentRouter");
 passportInit(passport);
 app.use(passport.initialize());
 app.use(passport.session());
@@ -74,5 +70,6 @@ app.use(
 //})
 
 app.use("/", router);
+app.use("/student", studentRouter);
 
 app.listen(PORT, console.log("server started"));
