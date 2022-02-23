@@ -28,8 +28,6 @@ studentRouter.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
-
-
 studentRouter.post("/register", async (req, res) => {
   try {
     console.log(req.body);
@@ -121,7 +119,6 @@ studentRouter.post("/verify", async (req, res) => {
   }
 });
 
-
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "static/uploads");
@@ -154,7 +151,7 @@ studentRouter.post("/submit", cpUpload, async (req, res) => {
     const adhaar = req.files.adhaar[0].filename;
     const bonafide = req.files.bonafide[0].filename;
     const passbook = req.files.passbook[0].filename;
-	
+
     await Student.findByIdAndUpdate(
       user._id,
       {

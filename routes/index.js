@@ -22,6 +22,6 @@ router.post("/admin", (req, res) => {
   if (email === "satya.20192079@mnnit.ac.in" && password === "satya1234") {
     res.render("admin-dashboard");
   } else res.redirect("/admin");
-})
+});
 
 module.exports = router;

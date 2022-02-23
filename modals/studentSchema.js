@@ -34,11 +34,11 @@ const studentSchema = new mongoose.Schema({
   token: { type: String },
   domicile: { type: String },
   photograph: { type: String },
-  income: {type:  String},
-  marksheet: {type:  String},
-  adhaar: {type:  String},
-  passbook: {type:  String},
-  bonafide: {type:  String},
+  income: { type: String },
+  marksheet: { type: String },
+  adhaar: { type: String },
+  passbook: { type: String },
+  bonafide: { type: String },
 });
 
 module.exports = mongoose.model("Student", studentSchema);

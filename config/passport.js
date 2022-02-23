@@ -26,7 +26,7 @@ const init = (passport) => {
             return done(null, false, { message: "Unknown user" });
           }
 
-          if (! await bcrypt.compare(password, user.password)) {
+          if (!(await bcrypt.compare(password, user.password))) {
             return done(null, false, { message: "Wrong Password" });
           }
 

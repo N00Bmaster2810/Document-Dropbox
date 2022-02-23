@@ -1,14 +1,14 @@
 const express = require("express");
 const path = require("path");
 require("dotenv").config();
-const bodyParser = require("body-parser")
+const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const app = express();
 const passport = require("passport");
 const session = require("express-session"); //package for session
 const flash = require("connect-flash"); //package for displaying messages on the front end
 const router = require("./routes/index");
-const MongoStore = require("connect-mongo"); 
+const MongoStore = require("connect-mongo");
 
 const PORT = process.env.PORT || 3000;
 const uri = process.env.CONNECTION_URL;
@@ -64,10 +64,6 @@ app.use(
     extended: true,
   })
 );
-
-//app.post("/student/register", (req, res) => {
-//  console.log(req.body);
-//})
 
 app.use("/", router);
 app.use("/student", studentRouter);
