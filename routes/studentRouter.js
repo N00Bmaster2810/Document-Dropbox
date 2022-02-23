@@ -113,7 +113,6 @@ studentRouter.post("/verify", async (req, res) => {
       res.redirect("/student/verify");
     }
     student.isVerified = true;
-    student.token = "";
     await student.save();
     req.flash("success", "successsfully verified");
     res.redirect("/");
@@ -128,7 +127,7 @@ const storage = multer.diskStorage({
     cb(null, "static/uploads");
   },
   filename: (req, file, cb) => {
-    cb(null, req.user.reg + "-" + file.originalname);
+    cb(null, Date.now().toString() + "-" + file.originalname);
   },
 });
 
@@ -147,6 +146,7 @@ var cpUpload = upload.fields([
 studentRouter.post("/submit", cpUpload, async (req, res) => {
   try {
     const user = req.user;
+    console.log(req.files);
     const domicile = req.files.domicile[0].filename;
     const photograph = req.files.photograph[0].filename;
     const income = req.files.income[0].filename;
@@ -154,8 +154,6 @@ studentRouter.post("/submit", cpUpload, async (req, res) => {
     const adhaar = req.files.adhaar[0].filename;
     const bonafide = req.files.bonafide[0].filename;
     const passbook = req.files.passbook[0].filename;
-
-    console.log(adhaar);
 	
     await Student.findByIdAndUpdate(
       user._id,
